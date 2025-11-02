@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         alert('로그인 성공! 게시판으로 이동합니다.');
-        window.location.href = '/posts';
+        window.location.href = '/post-list';
       } else {
         // 실패 시 helper text 표시
         if (loginError) {

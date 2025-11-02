@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게시글 수정</title>
+  <link rel="stylesheet" href="/css/post-edit.css" />
+</head>
+<body>
+  <header>
+    <h1>게시글 수정</h1>
+  </header>
+
+  <main class="edit-container">
+    <form id="editForm" enctype="multipart/form-data">
+      <!-- 제목 입력 -->
+      <label for="title">제목</label>
+      <input 
+        type="text" 
+        id="title" 
+        name="title" 
+        maxlength="26" 
+        value="{{ existingTitle }}" 
+        required 
+      />
+      <p class="title-helper">* 최대 26자까지 입력 가능합니다.</p>
+
+      <!-- 본문 입력 -->
+      <label for="content">본문</label>
+      <textarea
+        id="content"
+        name="content"
+        rows="10"
+        required
+      >{{ existingContent }}</textarea>
+
+      <!-- 기존 이미지 표시 + 이미지 변경 -->
+      <label for="image">이미지 (최대 1개)</label>
+      <div class="image-preview">
+        <img id="currentImage" src="{{ existingImageUrl }}" alt="기존 이미지" />
+      </div>
+      <input 
+        type="file" 
+        id="image" 
+        name="image" 
+        accept="image/*"
+      />
+      <p class="image-helper">* 새로운 이미지를 업로드하지 않으면 기존 이미지가 유지됩니다.</p>
+
+      <!-- 제출 버튼 -->
+      <button type="submit" id="update-btn">수정하기</button>
+    </form>
+  </main>
+
+  <script src="/js/post-edit.js"></script>
+</body>
+</html>
