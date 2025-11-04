@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const pwInput = document.getElementById('password');
   const btn = document.querySelector('.btn');
   const loginError = document.getElementById('loginError'); // helper text 영역
-
+  const API_BASE_URL = CONFIG.API_BASE_URL;
+  
   // 페이지 진입 시 helper text 초기화
   if (loginError) {
     loginError.textContent = '';
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const resp = await fetch('http://localhost:8080/api/v1/auth/login', {
+      const resp = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

@@ -2,17 +2,21 @@ const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
 const { getAccessToken } = require('../utils/tokenStore');
+const API_BASE_URL = 'http://localhost:8080/api/v1';
+// const userId =
+
 
 // 게시글 추가 API
 router.post('/', async (req, res) => {
     try {
+        const userId = req.session.userId;
         const token = getAccessToken(); // 인메모리에서 토큰 가져오기
         if (!token) {
             return res.status(401).json({ message: '로그인이 필요합니다.' });
         }
         const { title, contents } = req.body;
 
-        const response = await fetch('http://localhost:8080/api/v1/boards', {
+        const response = await fetch(`${API_BASE_URL}/boards?userId=${userId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const toast = document.getElementById('toastMsg');
   const titleError = document.getElementById('titleError');
   const contentError = document.getElementById('contentError');
-
-  const API_BASE_URL = 'http://localhost:8080/api/v1';
+  
+  const API_BASE_URL = CONFIG.API_BASE_URL;
   const token = localStorage.getItem('accessToken');
 
   form.addEventListener('submit', async (e) => {

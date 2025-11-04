@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isLoading = false;
   let hasMore = true;
 
-  const API_BASE_URL = 'http://localhost:8080/api/v1';
+  const API_BASE_URL = CONFIG.API_BASE_URL;
 
   // 게시글 작성 버튼
   btnWrite.addEventListener('click', () => {

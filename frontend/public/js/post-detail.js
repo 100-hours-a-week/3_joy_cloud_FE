@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const API_BASE_URL = 'http://localhost:8080/api/v1';
+  const API_BASE_URL = CONFIG.API_BASE_URL;
   
   // URL에서 게시글 ID 가져오기
   const urlParams = new URLSearchParams(window.location.search);
