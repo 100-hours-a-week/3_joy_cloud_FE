@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentError = document.getElementById('contentError');
 
   const API_BASE_URL = 'http://localhost:8080/api/v1';
-
+  const token = localStorage.getItem('accessToken');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();

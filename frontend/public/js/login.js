@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('.btn');
   const loginError = document.getElementById('loginError'); // helper text 영역
 
-  // ✅ 페이지 진입 시 helper text 초기화
+  // 페이지 진입 시 helper text 초기화
   if (loginError) {
     loginError.textContent = '';
     loginError.style.display = 'none';
   }
 
-  // 🔹 로그인 요청 처리
+  // 로그인 요청 처리
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
